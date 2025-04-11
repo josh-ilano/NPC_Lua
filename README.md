@@ -8,9 +8,12 @@ The goal of this project was to develop a hybrid implementation of an optimized 
 [NPC Client](https://www.youtube.com/watch?v=JyMxrcqEzu8&t=974s&pp=ygUPbnBjIHBhdGhmaW5kaW5n) What this NPC system is based off on. The servers only maintain position, while the client contains the actual NPC. 
 
 ## Optimizations
-[Avoidance of physics calcualtions](#Physics)
-[Render system](#Render)
-[Client-sided](#Client)
+[Avoidance of physics calculations](#Physics)  
+
+[Render system](#Render)  
+
+[Client-sided](#Client)  
+
 
 
 # Physics
@@ -19,3 +22,8 @@ Arguably, this can be considered overcall, but primarily, the NPCs in this game 
 # Render
 Two render systems exist (both on the server and client). On the client, if the NPC is away from the player within a certain distance, the NPC is simply moved out of the workspace (where assets are rendered visible to players) into ReplicatedStorage (where unrendered assets are usually stored). On the server, this render condition will determine whether enemy should use Pathfinding or simple teleportation to accomplish such. 
 
+# Client
+Again, the NPC models only exist on the client, and they only move according to the position the server assigns them. Fundamentally, the server and the client separately interpolate positions. 
+
+
+Documentation is a work in progress...
